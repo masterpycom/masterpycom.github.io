@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Investigación - Formato LaTeX</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuentes matemáticas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <!-- Contenedor principal donde se generarán las páginas -->
+    <div id="carta-container"></div>
+    
+    <!-- Plantilla de página carta (oculta) -->
+    <template id="page-template">
+        <div class="carta-page">
+            <!-- ENCABEZADO CON IMÁGENES -->
+            <div class="page-header">
+                <div class="header-images">
+                    <!-- Imagen izquierda -->
+                    <div class="header-img header-left-img">
+                        <div class="img-placeholder">
+                            LOGO<br>INSTITUCIÓN<br>(Izquierda)
+                        </div>
+                    </div>
+                    
+                    <!-- Centro con título -->
+                    <div class="header-center-content">
+                        <div class="main-title">INFORME DE INVESTIGACIÓN</div>
+                        <div class="sub-title">Análisis Matemático Aplicado | Departamento de Ciencias Exactas</div>
+                    </div>
+                    
+                    <!-- Imagen derecha -->
+                    <div class="header-img header-right-img">
+                        <div class="img-placeholder">
+                            LOGO<br>DEPARTAMENTO<br>(Derecha)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PIE DE PÁGINA -->
+            <div class="page-footer">
+                <div class="footer-left">INVESTIGACIÓN</div>
+                <div class="footer-center">Autor: Fraz G. Trujillano CH.</div>
+                <div class="footer-right">Página <span class="page-num">1</span></div>
+            </div>
+            
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="letter-body">
+                <!-- El contenido se insertará aquí -->
+            </div>
+        </div>
+    </template>
+    
+    <!-- Contenido que se distribuirá en páginas -->
+    <div id="contenido-original" style="display: none;">
+        <!-- Página 1 -->
+        <div class="pagina-contenido" data-page="1">
+            <div class="salutation">1. INTRODUCCIÓN AL ANÁLISIS DE ESTABILIDAD</div>
+            
+            <div class="paragraph">
+                En el estudio de sistemas dinámicos lineales, la estabilidad es una propiedad fundamental 
+                que determina el comportamiento a largo plazo del sistema. Consideremos un sistema descrito 
+                por la ecuación diferencial lineal de coeficientes constantes:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation latex">
+                    $$\frac{x}{y}$$
+                </div>
+                <div class="equation-number">(1.1)</div>
+            </div>
+            
+            <div class="paragraph">
+                Aplicando la transformada de Laplace con condiciones iniciales nulas, obtenemos la función 
+                de transferencia del sistema:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation latex">
+                    G(s) = \frac{Y(s)}{U(s)} = \frac{b_m s^m + b_{m-1} s^{m-1} + \cdots + b_0}{a_n s^n + a_{n-1} s^{n-1} + \cdots + a_0}
+                </div>
+                <div class="equation-number">(1.2)</div>
+            </div>
+            
+            <div class="paragraph">
+                La estabilidad del sistema está completamente determinada por la localización de los polos 
+                en el plano complejo <span class="math-symbol">s</span>. Un sistema es estable si y solo si 
+                todos los polos tienen parte real negativa.
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Teorema 1.1 (Criterio de Routh-Hurwitz)</div>
+                <div class="paragraph">
+                    Dado el polinomio característico <span class="math-symbol">P(s) = a_n s^n + a_{n-1} s^{n-1} + \cdots + a_0</span> 
+                    con <span class="math-symbol">a_n > 0</span>, el sistema es estable si y solo si todos los 
+                    elementos de la primera columna de la tabla de Routh tienen el mismo signo.
+                </div>
+            </div>
+            
+            <div class="paragraph">
+                La tabla de Routh se construye de la siguiente manera:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation">
+                    <table style="margin: 0 auto; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 2px 10px; border-right: 1px solid #999;">s<sup>n</sup></td>
+                            <td style="padding: 2px 10px;">a<sub>n</sub></td>
+                            <td style="padding: 2px 10px;">a<sub>n-2</sub></td>
+                            <td style="padding: 2px 10px;">a<sub>n-4</sub></td>
+                            <td style="padding: 2px 10px;">⋯</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 2px 10px; border-right: 1px solid #999;">s<sup>n-1</sup></td>
+                            <td style="padding: 2px 10px;">a<sub>n-1</sub></td>
+                            <td style="padding: 2px 10px;">a<sub>n-3</sub></td>
+                            <td style="padding: 2px 10px;">a<sub>n-5</sub></td>
+                            <td style="padding: 2px 10px;">⋯</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 2px 10px; border-right: 1px solid #999;">s<sup>n-2</sup></td>
+                            <td style="padding: 2px 10px;">b<sub>1</sub></td>
+                            <td style="padding: 2px 10px;">b<sub>2</sub></td>
+                            <td style="padding: 2px 10px;">b<sub>3</sub></td>
+                            <td style="padding: 2px 10px;">⋯</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 2px 10px; border-right: 1px solid #999;">s<sup>n-3</sup></td>
+                            <td style="padding: 2px 10px;">c<sub>1</sub></td>
+                            <td style="padding: 2px 10px;">c<sub>2</sub></td>
+                            <td style="padding: 2px 10px;">c<sub>3</sub></td>
+                            <td style="padding: 2px 10px;">⋯</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="paragraph">
+                Donde los coeficientes se calculan recursivamente:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation latex">
+                    b_1 = \frac{a_{n-1} a_{n-2} - a_n a_{n-3}}{a_{n-1}}, \quad
+                    b_2 = \frac{a_{n-1} a_{n-4} - a_n a_{n-5}}{a_{n-1}}, \quad
+                    c_1 = \frac{b_1 a_{n-3} - a_{n-1} b_2}{b_1}
+                </div>
+                <div class="equation-number">(1.3)</div>
+            </div>
+        </div>
+        
+        <!-- Página 2 -->
+        <div class="pagina-contenido" data-page="2">
+            <div class="salutation">2. SISTEMAS DE SEGUNDO ORDEN</div>
+            
+            <div class="paragraph">
+                Un caso particular de gran importancia práctica son los sistemas de segundo orden, 
+                cuya función de transferencia estándar es:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation latex">
+                    G(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}
+                </div>
+                <div class="equation-number">(2.1)</div>
+            </div>
+            
+            <div class="paragraph">
+                donde <span class="math-symbol">ω<sub>n</sub></span> es la frecuencia natural no amortiguada 
+                y <span class="math-symbol">ζ</span> es el coeficiente de amortiguamiento. Los polos del 
+                sistema son:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation latex">
+                    s_{1,2} = -\zeta\omega_n \pm \omega_n\sqrt{\zeta^2 - 1}
+                </div>
+                <div class="equation-number">(2.2)</div>
+            </div>
+            
+            <div class="paragraph">
+                Las características de respuesta transitoria se definen mediante los siguientes parámetros:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation">
+                    <table style="margin: 0 auto; border-collapse: collapse; font-size: 11px;">
+                        <tr>
+                            <td style="padding: 3px 8px; text-align: left;">Frecuencia natural no amortiguada:</td>
+                            <td style="padding: 3px 8px; text-align: left;">ω<sub>n</sub></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px 8px; text-align: left;">Coeficiente de amortiguamiento:</td>
+                            <td style="padding: 3px 8px; text-align: left;">ζ</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px 8px; text-align: left;">Frecuencia natural amortiguada:</td>
+                            <td style="padding: 3px 8px; text-align: left;">ω<sub>d</sub> = ω<sub>n</sub>√(1 - ζ²)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 3px 8px; text-align: left;">Constante de tiempo:</td>
+                            <td style="padding: 3px 8px; text-align: left;">τ = 1/(ζω<sub>n</sub>)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Teorema 2.1 (Parámetros de Respuesta Transitoria)</div>
+                <div class="paragraph">
+                    Para un sistema de segundo orden subamortiguado (0 < ζ < 1), los parámetros de desempeño 
+                    se calculan como:
+                </div>
+                <div class="equation latex">
+                    t_r = \frac{\pi - \phi}{\omega_d}, \quad
+                    t_p = \frac{\pi}{\omega_d}, \quad
+                    M_p = e^{-\pi\zeta/\sqrt{1-\zeta^2}} \times 100\%, \quad
+                    t_s \approx \frac{4}{\zeta\omega_n}
+                </div>
+                <div class="paragraph" style="margin-top: 8px;">
+                    donde φ = arctan(√(1-ζ²)/ζ), t<sub>r</sub> es el tiempo de subida, t<sub>p</sub> el tiempo pico, 
+                    M<sub>p</sub> el sobrepaso máximo, y t<sub>s</sub> el tiempo de establecimiento al 2%.
+                </div>
+            </div>
+            
+            <div class="salutation" style="margin-top: 20px;">3. SISTEMAS DISCRETOS</div>
+            
+            <div class="paragraph">
+                En el dominio discreto, la estabilidad se analiza en el plano Z. La función de transferencia 
+                discreta de un sistema LTI es:
+            </div>
+            
+            <div class="equation-container">
+                <div class="equation latex">
+                    H(z) = \frac{Y(z)}{X(z)} = \frac{b_0 + b_1 z^{-1} + \cdots + b_m z^{-m}}{1 + a_1 z^{-1} + \cdots + a_n z^{-n}}
+                </div>
+                <div class="equation-number">(3.1)</div>
+            </div>
+            
+            <div class="proof">
+                <div class="proof-title">Demostración (Criterio de Jury)</div>
+                <div class="paragraph">
+                    Dado el polinomio característico D(z) = a₀zⁿ + a₁zⁿ⁻¹ + ... + aₙ con a₀ > 0, las condiciones 
+                    de estabilidad son: D(1) > 0, (-1)ⁿD(-1) > 0, |a₀| < |aₙ|, |b₀| > |bₙ₋₁|, |c₀| > |cₙ₋₂|, etc.
+                </div>
+            </div>
+            
+            <div class="closing">
+                Este análisis constituye la base teórica para el estudio de estabilidad en sistemas dinámicos 
+                lineales, tanto continuos como discretos.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Panel de controles -->
+    <div class="controls no-print">
+        <h3 style="font-size: 14px; margin-bottom: 10px;">Configuración del Documento</h3>
+        
+        <div class="control-group">
+            <label for="fontFamily">Fuente Matemática:</label>
+            <select id="fontFamily">
+                <option value="'Latin Modern Math', 'Cambria Math', 'STIX Two Math', serif">Latin Modern Math</option>
+                <option value="'Cambria Math', serif">Cambria Math</option>
+                <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="fontSize">Tamaño de Texto:</label>
+            <select id="fontSize">
+                <option value="11px">Pequeño (11px)</option>
+                <option value="12px" selected>Estándar (12px)</option>
+                <option value="13px">Grande (13px)</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="themeColor">Color Principal:</label>
+            <select id="themeColor">
+                <option value="#003366" selected>Azul Académico</option>
+                <option value="#800000">Bordeaux</option>
+                <option value="#006400">Verde Oliva</option>
+                <option value="#4B0082">Índigo</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="imageColor">Color de Imágenes:</label>
+            <select id="imageColor">
+                <option value="#e6f3ff" selected>Azul Claro</option>
+                <option value="#fff0e6">Naranja Claro</option>
+                <option value="#f0ffe6">Verde Claro</option>
+                <option value="#f6e6ff">Lila Claro</option>
+            </select>
+        </div>
+        
+        <button id="updateBtn">Aplicar Cambios</button>
+        <button id="printBtn">Imprimir Documento</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

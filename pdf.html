@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFORME DE INVESTICACION</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Fuentes matemáticas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Contenedor principal donde se generarán las páginas -->
+    <div id="carta-container"></div>
+
+    <!-- Plantilla de página carta (oculta) -->
+    <template id="page-template">
+        <div class="carta-page">
+            <!-- ENCABEZADO CON IMÁGENES -->
+            <div class="page-header">
+                <div class="header-images">
+                    <!-- Imagen izquierda -->
+                    <div class="header-img header-left-img">
+                        <div class="img-placeholder">
+                            LOGO<br>PUCULULOS<br>(Izquierda)
+                        </div>
+                    </div>
+
+                    <!-- Centro con título -->
+                    <div class="header-center-content">
+                        <div class="main-title">INVESTIGACIÓN</div>
+                        <div class="sub-title">Análisis Matemático Aplicado</div>
+                    </div>
+
+                    <!-- Imagen derecha -->
+                    <div class="header-img header-right-img">
+                        <div class="img-placeholder">
+                            LOGO<br>PUCULULOS<br>(Derecha)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PIE DE PÁGINA -->
+            <div class="page-footer">
+                <div class="footer-left">INVESTIGACIÓN</div>
+                <div class="footer-center">Autor: Fraz G. Trujillano CH.</div>
+                <div class="footer-right">Página <span class="page-num">1</span></div>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="letter-body">
+                <!-- El contenido se insertará aquí -->
+            </div>
+        </div>
+    </template>
+
+    <!-- Contenido que se distribuirá en páginas -->
+    <div id="contenido-original" style="display: none;">
+        <!-- Página 1 -->
+        <div class="pagina-contenido" data-page="1">
+            <div class="salutation">
+                <h1>LÓGICA AL DESNUDO</h1>
+            </div>
+            <p>
+                $$\text{Negacion } = No = ! = \neg $$
+                $$ Y = \wedge = \cap = * = \& = \&\& \qquad O = \vee = \cup = + = | = || $$
+                $$\text{si entonces} = → \qquad \text{Si solo si} = ↔ $$
+            </p>
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="title">Lógica Humana</th>
+                            <th class="title">Lógica Proposicional</th>
+                            <th class="title">Álgebra Booleana</th>
+                            <th class="title">Teoría de Conjuntos</th>
+                            <th class="title" style="background-color: #00078A; color: white;">Circuitos Digitales</th>
+                            <th class="title" style="background-color: #00078A; color: white;">Lógica de ADN /
+                                Computación Molecular</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CONJUNCIÓN (Y)</td>
+                            <td><span class="operator logic">∧</span> (y)</td>
+                            <td><span class="operator algebra">•</span> (punto) o AND</td>
+                            <td><span class="operator sets">∩</span> (intersección)</td>
+                            <td><span class="operator circuits">AND</span> (⋅ o *)</td>
+                            <td><span class="operator dna">Hibridación Conjunta</span><br>Presencia simultánea de
+                                múltiples hebras "input"</td>
+                        </tr>
+                        <tr>
+                            <td>DISYUNCIÓN (O)</td>
+                            <td><span class="operator logic">∨</span> (o)</td>
+                            <td><span class="operator algebra">+</span> (más) o OR</td>
+                            <td><span class="operator sets">∪</span> (unión)</td>
+                            <td><span class="operator circuits">OR</span> (+)</td>
+                            <td><span class="operator dna">Reacción OR</span><br>Presencia de al menos una hebra
+                                específica</td>
+                        </tr>
+                        <tr>
+                            <td>CONDICIONAL (Si... entonces...)</td>
+                            <td><span class="operator logic">→</span> (implicación)</td>
+                            <td>A' + B (implicación)</td>
+                            <td><span class="operator sets">⊆</span> (subconjunto)</td>
+                            <td>Implicación (compuerta OR con NOT)</td>
+                            <td><span class="operator dna">Activación por Desplazamiento</span><br>Una hebra libera o
+                                activa a otra</td>
+                        </tr>
+                        <tr>
+                            <td>BICONDICIONAL (Si y solo si)</td>
+                            <td><span class="operator logic">↔</span> (doble implicación)</td>
+                            <td><span class="operator algebra">=</span> (igualdad)</td>
+                            <td><span class="operator sets">=</span> (igualdad)</td>
+                            <td><span class="operator circuits">XNOR</span></td>
+                            <td><span class="operator dna">Complementariedad Perfecta</span><br>Doble hibridación
+                                reversible</td>
+                        </tr>
+                        <tr>
+                            <td>NEGACIÓN (NO)</td>
+                            <td><span class="operator logic">¬</span> (no)</td>
+                            <td><span class="operator algebra">A'</span> o <span class="operator algebra">Ā</span>
+                                (complemento)</td>
+                            <td><span class="operator sets">A<sup>c</sup></span> (complemento)</td>
+                            <td><span class="operator circuits">NOT</span> o inversor</td>
+                            <td><span class="operator dna">Inhibición / Bloqueo</span><br>Hebra antagónica que impide
+                                reacción</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1> OPERACIONES PROPOSICIONALES </h1>
+            <div style="font-family: Arial, sans-serif; padding: 15px;">
+                <div
+                    style="background: #f8f9fa; border-left: 4px solid #007bff; padding: 15px; border-radius: 0 4px 4px 0;">
+                    <h3 style="margin-top: 0; color: #0056b3;">
+                        🔍 Variables lógicas <code
+                            style="background: #e9ecef; padding: 2px 6px; border-radius: 3px;">(p, q)</code>
+                    </h3>
+
+                    <div style="margin-left: 20px;">
+                        <p style="margin: 8px 0;">
+                            <span style="font-weight: bold; color: #28a745;">▶</span>
+                            <strong>Variables proposicionales</strong>
+                            <span style="color: #6c757d; float: right;">lógica matemática</span>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <span style="font-weight: bold; color: #28a745;">▶</span>
+                            <strong>Variables booleanas</strong>
+                            <span style="color: #6c757d; float: right;">álgebra de Boole</span>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <span style="font-weight: bold; color: #28a745;">▶</span>
+                            <strong>Proposiciones simples</strong>
+                            <span style="color: #6c757d; float: right;">lógica formal</span>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <span style="font-weight: bold; color: #28a745;">▶</span>
+                            <strong>Enunciados atómicos</strong>
+                            <span style="color: #6c757d; float: right;">filosofía lógica</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            \[
+            \left\{
+            \begin{array}{lll}
+            V &=& Verdad\\
+            F &=& Falso\\
+            \end{array}
+            \right.
+            \]
+            <div class="table-box">
+                <table>
+                    <tr>
+                        <th colspan="2" class="title">NEGACION</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>~p</td>
+                    </tr>
+                    <tr>
+                        <td class="r">V</td>
+                        <td class="r">F</td>
+                    </tr>
+                    <tr>
+                        <td class="r">F</td>
+                        <td class="r">V</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title">CONJUNCION</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op">p ∧ q</td>
+                    </tr>
+                    <tr>
+                        <td class="r">V</td>
+                        <td class="r">V</td>
+                        <td class="r">V</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>F</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>V</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>F</td>
+                        <td>F</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title purple-text">DISYUNCION</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op purple-text">p ∨ q</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>V</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>F</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>V</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td class="r">F</td>
+                        <td class="r">F</td>
+                        <td class="r">F</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title blue-text">IMPLICACION O CONDICIONAL</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op purple-text">p → q</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>V</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td class="r">V</td>
+                        <td class="r">F</td>
+                        <td class="r">F</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>V</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>F</td>
+                        <td>V</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title blue-text">DOBLE IMPLICACION O BICONDICIONAL</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op r">p ↔ q</td>
+                    </tr>
+                    <tr>
+                        <td class="r">V</td>
+                        <td class="r">V</td>
+                        <td class="r">V</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>F</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>V</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td class="r">F</td>
+                        <td class="r">F</td>
+                        <td class="r">V</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title blue-text">DISYUNCION O EXCLUSIVA</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op">p <span style="text-decoration: underline;">∨</span> q</td>
+                    </tr>
+                    <tr>
+                        <td class="r">V</td>
+                        <td class="r">V</td>
+                        <td class="r">F</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>F</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>V</td>
+                        <td>V</td>
+                    </tr>
+                    <tr>
+                        <td class="r">F</td>
+                        <td class="r">F</td>
+                        <td class="r">F</td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <h1> CIRCUITO LÓGICO (álgebra de Boole)</h1>
+            <div style="background:#f5f5f5; padding:15px; border-radius:8px; margin:10px 0;">
+                <h3 style="margin-top:0; color:#333;">En electrónica digital (p,q):</h3>
+                <div style="display:flex; align-items:center; justify-content:center; gap:15px; flex-wrap:wrap;">
+                    <span style="background:#4CAF50; color:white; padding:8px 15px; border-radius:4px;">
+                        <strong>Entradas lógicas</strong>
+                    </span>
+                    <span style="color:#666; font-size:20px;">↔</span>
+                    <span style="background:#2196F3; color:white; padding:8px 15px; border-radius:4px;">
+                        <strong>Señales de entrada</strong>
+                    </span>
+                </div>
+                <p style="text-align:center; color:#555; margin-top:10px;">
+                    Representan valores binarios (0/1) aplicados a circuitos digitales
+                </p>
+            </div>
+            \[
+            \left\{
+            \begin{array}{llllll}
+            V &=& 1 &=& Verdad &=& ALTO (HIGH)\\
+            F &=& 0 &=& Falso &=& BAJO (LOW)\\
+            \end{array}
+            \right.
+            \]
+            <div class="table-box">
+                <table>
+                    <tr>
+                        <th colspan="2" class="title">NEGACION</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>~p</td>
+                    </tr>
+                    <tr>
+                        <td class="r">1</td>
+                        <td class="r">0</td>
+                    </tr>
+                    <tr>
+                        <td class="r">0</td>
+                        <td class="r">1</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title">CONJUNCION</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op">p ∧ q</td>
+                    </tr>
+                    <tr>
+                        <td class="r">1</td>
+                        <td class="r">1</td>
+                        <td class="r">1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title purple-text">DISYUNCION</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op purple-text">p ∨ q</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="r">0</td>
+                        <td class="r">0</td>
+                        <td class="r">0</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title blue-text">IMPLICACION O CONDICIONAL</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op purple-text">p → q</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="r">1</td>
+                        <td class="r">0</td>
+                        <td class="r">0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title blue-text">DOBLE IMPLICACION O BICONDICIONAL</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op r">p ↔ q</td>
+                    </tr>
+                    <tr>
+                        <td class="r">1</td>
+                        <td class="r">1</td>
+                        <td class="r">1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td class="r">0</td>
+                        <td class="r">0</td>
+                        <td class="r">1</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th colspan="3" class="title blue-text">DISYUNCION O EXCLUSIVA</th>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>q</td>
+                        <td class="op">p <span style="text-decoration: underline;">∨</span> q</td>
+                    </tr>
+                    <tr>
+                        <td class="r">1</td>
+                        <td class="r">1</td>
+                        <td class="r">0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="r">0</td>
+                        <td class="r">0</td>
+                        <td class="r">0</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <h1>Tablas de Verdad en Lógica de ADN</h1>
+
+            <div class="table-box">
+                <div>
+                    <h3>NOT (¬A)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q=¬A</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>AND (A∧B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>OR (A∨B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>XOR (A⊕B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>→ (A→B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>↔ (A↔B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>NAND ¬(A∧B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>NOR ¬(A∨B)</h3>
+                    <table>
+                        <tr>
+                            <th>A (Hebra)</th>
+                            <th>B (Hebra)</th>
+                            <th>Salida</th>
+                            <th>Q</th>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Ausente (0)</td>
+                            <td>Fluorescencia</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Ausente (0)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Ausente (0)</td>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Presente (1)</td>
+                            <td>Presente (1)</td>
+                            <td>No fluorescencia</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+            <h1>Tablas de verdad aplicadas a Medicina</h1>
+
+            <h2>1. Diagnóstico de Neumonía</h2>
+            <table>
+                <tr>
+                    <th>Fiebre</th>
+                    <th>Tos</th>
+                    <th>Dificultad Respiratoria</th>
+                    <th>Diagnóstico (Neumonía)</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Muy probable (1)</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Probable (1)</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Probable (1)</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Poco probable (0)</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Probable (1)</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Poco probable (0)</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Otra causa (0)</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Excluido (0)</td>
+                </tr>
+            </table>
+
+            <h2>3. Escala de Glasgow (Coma)</h2>
+            <table>
+                <tr>
+                    <th>Apertura Ocular</th>
+                    <th>Respuesta Verbal</th>
+                    <th>Respuesta Motora</th>
+                    <th>Puntaje</th>
+                    <th>Gravedad</th>
+                </tr>
+                <tr>
+                    <td>Espontánea (4)</td>
+                    <td>Orientada (5)</td>
+                    <td>Obedece (6)</td>
+                    <td>15</td>
+                    <td>Leve</td>
+                </tr>
+                <tr>
+                    <td>Al dolor (2)</td>
+                    <td>Confusa (4)</td>
+                    <td>Localiza dolor (5)</td>
+                    <td>11</td>
+                    <td>Moderado</td>
+                </tr>
+                <tr>
+                    <td>Ninguna (1)</td>
+                    <td>Sonidos (2)</td>
+                    <td>Flexión (3)</td>
+                    <td>6</td>
+                    <td>Grave</td>
+                </tr>
+                <tr>
+                    <td>Ninguna (1)</td>
+                    <td>Ninguna (1)</td>
+                    <td>Ninguna (1)</td>
+                    <td>3</td>
+                    <td>Muy grave</td>
+                </tr>
+            </table>
+
+            <h2>4. Criterios de Jones (Fiebre Reumática)</h2>
+            <table>
+                <tr>
+                    <th>Mayor 1</th>
+                    <th>Mayor 2</th>
+                    <th>Evidencia Infección</th>
+                    <th>Diagnóstico</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Confirmado</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Probable</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Posible</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+            </table>
+
+
+
+
+
+
+            <h1>⚖️ Tablas de Verdad en Derecho y Abogacía</h1>
+
+            <h2>1. Elementos del Delito (Lógica Penal)</h2>
+            <table>
+                <tr>
+                    <th>Acción</th>
+                    <th>Tipicidad</th>
+                    <th>Antijuridicidad</th>
+                    <th>Culpabilidad</th>
+                    <th>Resultado Lógico</th>
+                    <th>Decisión Judicial</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 1 = 1</td>
+                    <td>CONDENA</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 0 = 0</td>
+                    <td>ABSOLUCIÓN</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>1 ∧ 1 ∧ 0 ∧ 1 = 0</td>
+                    <td>LEGÍTIMA DEFENSA</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>1 ∧ 0 ∧ 1 ∧ 1 = 0</td>
+                    <td>NO TIPIFICADO</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>0 ∧ 1 ∧ 1 ∧ 1 = 0</td>
+                    <td>NO HAY ACCIÓN</td>
+                </tr>
+            </table>
+
+            <h2>2. Validez de Contrato (Lógica Contractual)</h2>
+            <table class="contrato">
+                <tr>
+                    <th>Consentimiento</th>
+                    <th>Objeto</th>
+                    <th>Causa</th>
+                    <th>Capacidad</th>
+                    <th>Forma</th>
+                    <th>Contrato Válido</th>
+                    <th>Operación Lógica</th>
+                </tr>
+                <tr>
+                    <td>Válido</td>
+                    <td>Lícito</td>
+                    <td>Lícita</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>VÁLIDO</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 1 ∧ 1 = 1</td>
+                </tr>
+                <tr>
+                    <td>Viciado</td>
+                    <td>Lícito</td>
+                    <td>Lícita</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>ANULABLE</td>
+                    <td>0 ∧ 1 ∧ 1 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>Válido</td>
+                    <td>Ilícito</td>
+                    <td>Lícita</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>NULO</td>
+                    <td>1 ∧ 0 ∧ 1 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>Válido</td>
+                    <td>Lícito</td>
+                    <td>Ilícita</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>NULO</td>
+                    <td>1 ∧ 1 ∧ 0 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>Válido</td>
+                    <td>Lícito</td>
+                    <td>Lícita</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>NULO</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 0 ∧ 1 = 0</td>
+                </tr>
+            </table>
+
+            <h2>3. Responsabilidad Civil</h2>
+            <table>
+                <tr>
+                    <th>Daño</th>
+                    <th>Causalidad</th>
+                    <th>Imputabilidad</th>
+                    <th>Culpa/Respons.</th>
+                    <th>Resultado Lógico</th>
+                    <th>Decisión</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 1 = 1</td>
+                    <td>RESPONSABLE</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 0 = 0</td>
+                    <td>NO RESPONSABLE</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>1 ∧ 0 ∧ 1 ∧ 1 = 0</td>
+                    <td>NO RELACIÓN CAUSAL</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>0 ∧ 1 ∧ 1 ∧ 1 = 0</td>
+                    <td>SIN DAÑO</td>
+                </tr>
+            </table>
+
+            <h2>4. Prueba Testifical (Credibilidad)</h2>
+            <table>
+                <tr>
+                    <th>Testigo Presente</th>
+                    <th>Testigo Creíble</th>
+                    <th>Testigo Imparcial</th>
+                    <th>Testigo Coherente</th>
+                    <th>Prueba Válida</th>
+                    <th>Operación Lógica</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>VÁLIDA</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 1 = 1</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>LIMITADA</td>
+                    <td>1 ∧ 1 ∧ 0 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>INVÁLIDA</td>
+                    <td>1 ∧ 0 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>NO ADMISIBLE</td>
+                    <td>0 ∧ 1 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+            </table>
+
+            <h2>5. Interpretación Normativa (Lógica Jurídica)</h2>
+            <table>
+                <tr>
+                    <th>Texto Claro</th>
+                    <th>Intención Legislador</th>
+                    <th>Doctrina</th>
+                    <th>Jurisprudencia</th>
+                    <th>Interpretación</th>
+                    <th>Fórmula</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>TEXTUAL</td>
+                    <td>1 → Textual</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>FINALISTA</td>
+                    <td>¬1 ∧ (1 ∨ 1 ∨ 1) → Finalista</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>SISTEMÁTICA</td>
+                    <td>¬1 ∧ ¬1 ∧ (1 ∨ 1) → Sistemática</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>JURISPRUDENCIAL</td>
+                    <td>¬1 ∧ ¬1 ∧ ¬1 ∧ 1 → Jurisprudencial</td>
+                </tr>
+            </table>
+
+            <h2>6. Procedimiento Judicial (Etapas)</h2>
+            <table>
+                <tr>
+                    <th>Demanda</th>
+                    <th>Notificación</th>
+                    <th>Respuesta</th>
+                    <th>Pruebas</th>
+                    <th>Audiencia</th>
+                    <th>Sentencia</th>
+                    <th>Procedimiento</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>COMPLETO</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>REBELDÍA</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>NULIDAD</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>LIMITADO</td>
+                </tr>
+            </table>
+
+
+
+
+
+            <h1>📈 Tablas de Verdad en Economía</h1>
+
+            <h2>1. Decisión de Inversión (Microeconomía)</h2>
+            <table class="microeconomia">
+                <tr>
+                    <th>Rentabilidad Esperada Alta</th>
+                    <th>Riesgo Bajo</th>
+                    <th>Liquidez Alta</th>
+                    <th>Horizonte Largo</th>
+                    <th>Decisión de Invertir</th>
+                    <th>Fórmula Lógica</th>
+                </tr>
+                <tr>
+                    <td>Sí (>15%)</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="alza">💎 INVERSIÓN IDEAL</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 1 = 1</td>
+                </tr>
+                <tr>
+                    <td>Sí (>15%)</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td class="alza">✅ INVERSIÓN BUENA</td>
+                    <td>1 ∧ 1 ∧ 1 ∧ 0 = 0</td>
+                </tr>
+                <tr>
+                    <td>Sí (>15%)</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="estable">⚠️ INVERSIÓN RIESGOSA</td>
+                    <td>1 ∧ 0 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>No (<5%)< /td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="baja">📉 INVERSIÓN CONSERVADORA</td>
+                    <td>0 ∧ 1 ∧ 1 ∧ 1 = 0</td>
+                </tr>
+                <tr>
+                    <td>Sí (>15%)</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td class="baja">❌ NO INVERTIR</td>
+                    <td>1 ∧ 0 ∧ 0 ∧ 0 = 0</td>
+                </tr>
+                <tr>
+                    <td>No (<5%)< /td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td class="baja">🚫 EVITAR</td>
+                    <td>0 ∧ 0 ∧ 0 ∧ 0 = 0</td>
+                </tr>
+            </table>
+
+            <h2>2. Ciclo Económico (Macroeconomía)</h2>
+            <table class="macroeconomia">
+                <tr>
+                    <th>PIB Creciendo</th>
+                    <th>Inflación Controlada</th>
+                    <th>Desempleo Bajo</th>
+                    <th>Déficit Controlado</th>
+                    <th>Fase del Ciclo</th>
+                    <th>Política Recomendada</th>
+                </tr>
+                <tr>
+                    <td>Sí (>3%)</td>
+                    <td>Sí (<3%)< /td>
+                    <td>Sí (<5%)< /td>
+                    <td>Sí</td>
+                    <td class="crecimiento">📈 EXPANSIÓN</td>
+                    <td>Política neutra</td>
+                </tr>
+                <tr>
+                    <td>Sí (>3%)</td>
+                    <td>No (>5%)</td>
+                    <td>Sí (<5%)< /td>
+                    <td>Sí</td>
+                    <td class="inflacion">🔥 SOBRECALENTAMIENTO</td>
+                    <td>Política contractiva</td>
+                </tr>
+                <tr>
+                    <td>No (<0%)< /td>
+                    <td>No (>5%)</td>
+                    <td>No (>8%)</td>
+                    <td>No</td>
+                    <td class="recesion">📉 ESTANFLACIÓN</td>
+                    <td>Política mixta</td>
+                </tr>
+                <tr>
+                    <td>No (<0%)< /td>
+                    <td>Sí (<3%)< /td>
+                    <td>No (>8%)</td>
+                    <td>Sí</td>
+                    <td class="recesion">💼 RECESIÓN</td>
+                    <td>Política expansiva</td>
+                </tr>
+                <tr>
+                    <td>Estable (0-2%)</td>
+                    <td>Sí (<3%)< /td>
+                    <td>Estable (5-8%)</td>
+                    <td>Sí</td>
+                    <td class="estancamiento">⚖️ ESTANCAMIENTO</td>
+                    <td>Política de estímulo</td>
+                </tr>
+            </table>
+
+            <h2>3. Decisión de Producción (Teoría de la Firma)</h2>
+            <table>
+                <tr>
+                    <th>Demanda Alta</th>
+                    <th>Precio > Costo Marginal</th>
+                    <th>Capacidad Ociosa</th>
+                    <th>Competencia Baja</th>
+                    <th>Decisión de Producir</th>
+                    <th>Beneficio Esperado</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="alza">🚀 AUMENTAR PRODUCCIÓN</td>
+                    <td>Alto (+)</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td class="alza">📈 MANTENER PRODUCCIÓN</td>
+                    <td>Moderado (+)</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="estable">⚖️ OPTIMIZAR COSTOS</td>
+                    <td>Bajo (±)</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td class="baja">📉 REDUCIR PRODUCCIÓN</td>
+                    <td>Negativo (-)</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td class="baja">🛑 DETENER PRODUCCIÓN</td>
+                    <td>Muy Negativo (--)</td>
+                </tr>
+            </table>
+
+            <h2>4. Política Monetaria (Banco Central)</h2>
+            <table class="finanzas">
+                <tr>
+                    <th>Inflación Objetivo</th>
+                    <th>Crecimiento Adecuado</th>
+                    <th>Desempleo Controlado</th>
+                    <th>Tipo Cambio Estable</th>
+                    <th>Decisión de Tasa</th>
+                    <th>Efecto Esperado</th>
+                </tr>
+                <tr>
+                    <td>En meta (2-4%)</td>
+                    <td>Adecuado (3-5%)</td>
+                    <td>Controlado (<6%)< /td>
+                    <td>Estable</td>
+                    <td class="estable">🟰 MANTENER TASAS</td>
+                    <td>Neutro</td>
+                </tr>
+                <tr>
+                    <td>Alta (>6%)</td>
+                    <td>Adecuado (3-5%)</td>
+                    <td>Controlado (<6%)< /td>
+                    <td>Estable</td>
+                    <td class="baja">⬆️ AUMENTAR TASAS</td>
+                    <td>Enfriar economía</td>
+                </tr>
+                <tr>
+                    <td>Baja (<2%)< /td>
+                    <td>Bajo (<2%)< /td>
+                    <td>Alto (>8%)</td>
+                    <td>Estable</td>
+                    <td class="alza">⬇️ BAJAR TASAS</td>
+                    <td>Estimular economía</td>
+                </tr>
+                <tr>
+                    <td>Alta (>6%)</td>
+                    <td>Bajo (<2%)< /td>
+                    <td>Alto (>8%)</td>
+                    <td>Inestable</td>
+                    <td class="recesion">🎯 POLÍTICA MIXTA</td>
+                    <td>Complejo</td>
+                </tr>
+            </table>
+
+            <h2>5. Mercado de Valores (Análisis Técnico)</h2>
+            <table>
+                <tr>
+                    <th>Media 50 > Media 200</th>
+                    <th>RSI > 50</th>
+                    <th>Volumen Creciente</th>
+                    <th>MACD Positivo</th>
+                    <th>Señal de Mercado</th>
+                    <th>Operación</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="alza">📈 FUERTE ALCISTA</td>
+                    <td>COMPRAR</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td class="alza">↗️ ALCISTA MODERADA</td>
+                    <td>COMPRAR PARCIAL</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="estable">➡️ NEUTRO</td>
+                    <td>MANTENER</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td class="baja">↘️ BAJISTA MODERADA</td>
+                    <td>VENDER PARCIAL</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td class="baja">📉 FUERTE BAJISTA</td>
+                    <td>VENDER</td>
+                </tr>
+            </table>
+
+            <h2>6. Decisiones de Consumo (Teoría del Consumidor)</h2>
+            <table class="microeconomia">
+                <tr>
+                    <th>Ingreso Suficiente</th>
+                    <th>Utilidad Marginal Alta</th>
+                    <th>Precio Relativo Bajo</th>
+                    <th>Sustitutos Caros</th>
+                    <th>Decisión de Comprar</th>
+                    <th>Excedente del Consumidor</th>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="alza">🛒 COMPRA INMEDIATA</td>
+                    <td>Alto</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td class="alza">✅ COMPRA PLANIFICADA</td>
+                    <td>Moderado</td>
+                </tr>
+                <tr>
+                    <td>Sí</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="estable">🤔 EVALUAR ALTERNATIVAS</td>
+                    <td>Bajo</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td>Sí</td>
+                    <td class="baja">⏳ ESPERAR/DIFERIR</td>
+                    <td>Potencial</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td class="baja">❌ NO COMPRAR</td>
+                    <td>Cero</td>
+                </tr>
+            </table>
+
+
+
+
+
+
+
+            <h1>🤖 Tablas de Verdad en Inteligencia Artificial</h1>
+
+            <h2>1. Puertas Lógicas en Redes Neuronales (Perceptrón)</h2>
+            <table>
+                <tr>
+                    <th>X₁</th>
+                    <th>X₂</th>
+                    <th>Pesos: w₁=1, w₂=1</th>
+                    <th>Bias: b=-1.5</th>
+                    <th>Suma: Σ(wx)+b</th>
+                    <th>Función Activación</th>
+                    <th>Salida (AND)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0×1 + 0×1 = 0</td>
+                    <td>-1.5</td>
+                    <td>-1.5</td>
+                    <td>σ(-1.5) ≈ 0.18</td>
+                    <td class="false">0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0×1 + 1×1 = 1</td>
+                    <td>-1.5</td>
+                    <td>-0.5</td>
+                    <td>σ(-0.5) ≈ 0.38</td>
+                    <td class="false">0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1×1 + 0×1 = 1</td>
+                    <td>-1.5</td>
+                    <td>-0.5</td>
+                    <td>σ(-0.5) ≈ 0.38</td>
+                    <td class="false">0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1×1 + 1×1 = 2</td>
+                    <td>-1.5</td>
+                    <td>0.5</td>
+                    <td>σ(0.5) ≈ 0.62</td>
+                    <td class="true">1</td>
+                </tr>
+            </table>
+
+            <div class="code">
+                # Implementación en Python del Perceptrón AND
+                import numpy as np
+
+                class Perceptron:
+                def __init__(self):
+                self.weights = np.array([1, 1]) # w₁, w₂
+                self.bias = -1.5
+
+                def activate(self, x):
+                z = np.dot(self.weights, x) + self.bias
+                return 1 if z > 0 else 0 # Función escalón
+
+                perceptron = Perceptron()
+                inputs = [(0,0), (0,1), (1,0), (1,1)]
+                for x in inputs:
+                output = perceptron.activate(x)
+                print(f"Input {x} → Output: {output}")
+            </div>
+
+            <h2>2. Operadores Lógicos en Sistemas Expertos</h2>
+            <table>
+                <tr>
+                    <th>Síntoma A</th>
+                    <th>Síntoma B</th>
+                    <th>Síntoma C</th>
+                    <th>Regla: (A ∧ B) ∨ C</th>
+                    <th>Diagnóstico IA</th>
+                    <th>Confianza</th>
+                </tr>
+                <tr>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td>(0 ∧ 0) ∨ 0 = 0</td>
+                    <td class="false">✅ Saludable</td>
+                    <td>95%</td>
+                </tr>
+                <tr>
+                    <td>Sí (1)</td>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td>(1 ∧ 1) ∨ 0 = 1</td>
+                    <td class="true">⚠️ Enfermedad X</td>
+                    <td>85%</td>
+                </tr>
+                <tr>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td>Sí (1)</td>
+                    <td>(1 ∧ 0) ∨ 1 = 1</td>
+                    <td class="true">⚠️ Enfermedad Y</td>
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td>Sí (1)</td>
+                    <td>(0 ∧ 0) ∨ 1 = 1</td>
+                    <td class="true">⚠️ Revisar</td>
+                    <td>60%</td>
+                </tr>
+            </table>
+
+            <h2>3. Lógica Difusa (Fuzzy Logic) para Control</h2>
+            <table>
+                <tr>
+                    <th>Temperatura</th>
+                    <th>Humedad</th>
+                    <th>Valor Difuso Temp</th>
+                    <th>Valor Difuso Hum</th>
+                    <th>Regla: IF Temp=Alta AND Hum=Alta</th>
+                    <th>Acción Sistema</th>
+                </tr>
+                <tr>
+                    <td>15°C (Baja)</td>
+                    <td>30% (Baja)</td>
+                    <td>Temp_Baja=0.8</td>
+                    <td>Hum_Baja=0.9</td>
+                    <td>min(0.8,0.9)=0.8 → NO aplicar</td>
+                    <td>Apagar A/C</td>
+                </tr>
+                <tr>
+                    <td>28°C (Media)</td>
+                    <td>70% (Media)</td>
+                    <td>Temp_Media=0.6</td>
+                    <td>Hum_Media=0.7</td>
+                    <td>min(0.6,0.7)=0.6 → Parcial</td>
+                    <td>A/C al 60%</td>
+                </tr>
+                <tr>
+                    <td>35°C (Alta)</td>
+                    <td>85% (Alta)</td>
+                    <td>Temp_Alta=0.9</td>
+                    <td>Hum_Alta=0.8</td>
+                    <td>min(0.9,0.8)=0.8 → SI aplicar</td>
+                    <td>A/C al 80%</td>
+                </tr>
+                <tr>
+                    <td>40°C (Muy Alta)</td>
+                    <td>95% (Muy Alta)</td>
+                    <td>Temp_Alta=1.0</td>
+                    <td>Hum_Alta=1.0</td>
+                    <td>min(1.0,1.0)=1.0 → Máximo</td>
+                    <td>A/C al 100%</td>
+                </tr>
+            </table>
+
+            <h2>4. Árboles de Decisión (Decision Trees)</h2>
+            <table>
+                <tr>
+                    <th>Edad > 30</th>
+                    <th>Ingreso > 50K</th>
+                    <th>Crédito Bueno</th>
+                    <th>Camino en Árbol</th>
+                    <th>Predicción IA</th>
+                    <th>Probabilidad</th>
+                </tr>
+                <tr>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td>Edad→Ingreso→Crédito</td>
+                    <td class="false">❌ Préstamo Negado</td>
+                    <td>92%</td>
+                </tr>
+                <tr>
+                    <td>No (0)</td>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td>Edad→Ingreso→Crédito</td>
+                    <td class="false">❌ Préstamo Negado</td>
+                    <td>88%</td>
+                </tr>
+                <tr>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td>Sí (1)</td>
+                    <td>Edad→Ingreso→Crédito</td>
+                    <td class="true">✅ Préstamo Aprobado</td>
+                    <td>78%</td>
+                </tr>
+                <tr>
+                    <td>Sí (1)</td>
+                    <td>Sí (1)</td>
+                    <td>Sí (1)</td>
+                    <td>Edad→Ingreso→Crédito</td>
+                    <td class="true">✅ Préstamo Aprobado</td>
+                    <td>95%</td>
+                </tr>
+            </table>
+
+            <div class="code">
+                # Árbol de Decisión - Pseudocódigo
+                def predecir_prestamo(edad, ingreso, credito):
+                if edad > 30:
+                if ingreso > 50000:
+                return "APROBADO" # Nodo hoja
+                else:
+                if credito == "BUENO":
+                return "APROBADO"
+                else:
+                return "RECHAZADO"
+                else:
+                if ingreso > 50000:
+                if credito == "EXCELENTE":
+                return "APROBADO"
+                else:
+                return "RECHAZADO"
+                else:
+                return "RECHAZADO"
+            </div>
+
+            <h2>5. Redes Neuronales para XOR (Problema No Lineal)</h2>
+            <table>
+                <tr>
+                    <th>X₁</th>
+                    <th>X₂</th>
+                    <th>Capa Oculta h₁</th>
+                    <th>Capa Oculta h₂</th>
+                    <th>Salida ŷ</th>
+                    <th>XOR Real</th>
+                    <th>Error</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>σ(-10×0 +20×0 -10)≈0</td>
+                    <td>σ(20×0 +20×0 -30)≈0</td>
+                    <td>σ(20×0 +20×0 -30)≈0</td>
+                    <td class="false">0</td>
+                    <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>σ(-10×0 +20×1 -10)≈0.73</td>
+                    <td>σ(20×0 +20×1 -30)≈0</td>
+                    <td>σ(20×0.73 +20×0 -30)≈0.99</td>
+                    <td class="true">1</td>
+                    <td>0.01</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>σ(-10×1 +20×0 -10)≈0</td>
+                    <td>σ(20×1 +20×0 -30)≈0</td>
+                    <td>σ(20×0 +20×0 -30)≈0.99</td>
+                    <td class="true">1</td>
+                    <td>0.01</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>σ(-10×1 +20×1 -10)≈0.5</td>
+                    <td>σ(20×1 +20×1 -30)≈0.73</td>
+                    <td>σ(20×0.5 +20×0.73 -30)≈0.01</td>
+                    <td class="false">0</td>
+                    <td>0.01</td>
+                </tr>
+            </table>
+
+            <h2>6. Lógica en Procesamiento de Lenguaje Natural (NLP)</h2>
+            <table>
+                <tr>
+                    <th>Texto Contiene "IA"</th>
+                    <th>Texto Contiene "aprendizaje"</th>
+                    <th>Texto Contiene "robótica"</th>
+                    <th>Clasificación</th>
+                    <th>Score BERT</th>
+                </tr>
+                <tr>
+                    <td>Sí (1)</td>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td class="true">🤖 TECNOLOGÍA</td>
+                    <td>0.95</td>
+                </tr>
+                <tr>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td>Sí (1)</td>
+                    <td class="true">🤖 TECNOLOGÍA</td>
+                    <td>0.92</td>
+                </tr>
+                <tr>
+                    <td>No (0)</td>
+                    <td>Sí (1)</td>
+                    <td>No (0)</td>
+                    <td class="false">📚 EDUCACIÓN</td>
+                    <td>0.15</td>
+                </tr>
+                <tr>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td>No (0)</td>
+                    <td class="false">❓ OTRO</td>
+                    <td>0.05</td>
+                </tr>
+            </table>
+
+            <h2>7. Verificación de Modelos de IA (Model Checking)</h2>
+            <table>
+                <tr>
+                    <th>Propiedad P</th>
+                    <th>Propiedad Q</th>
+                    <th>Propiedad R</th>
+                    <th>Fórmula Temporal</th>
+                    <th>Sistema Cumple</th>
+                    <th>Verificado por IA</th>
+                </tr>
+                <tr>
+                    <td>Verdadero</td>
+                    <td>Verdadero</td>
+                    <td>Verdadero</td>
+                    <td>□(P ∧ Q → ◇R)</td>
+                    <td class="true">✅ SATISFACE</td>
+                    <td>Model Checker: OK</td>
+                </tr>
+                <tr>
+                    <td>Verdadero</td>
+                    <td>Falso</td>
+                    <td>Verdadero</td>
+                    <td>□(P ∧ Q → ◇R)</td>
+                    <td class="true">✅ SATISFACE</td>
+                    <td>Model Checker: OK</td>
+                </tr>
+                <tr>
+                    <td>Verdadero</td>
+                    <td>Verdadero</td>
+                    <td>Falso</td>
+                    <td>□(P ∧ Q → ◇R)</td>
+                    <td class="false">❌ VIOLA</td>
+                    <td>Counterexample found</td>
+                </tr>
+                <tr>
+                    <td>Falso</td>
+                    <td>Falso</td>
+                    <td>Verdadero</td>
+                    <td>□(P ∧ Q → ◇R)</td>
+                    <td class="true">✅ SATISFACE</td>
+                    <td>Vacuous truth</td>
+                </tr>
+            </table>
+
+
+
+
+
+            <article class="page">
+                <h1>LENGUAJE PROLOG </h1>
+                <div class="code-block">
+                    <div class="code-header"><span>lenguaje-PROLOG.pl</span></div>
+                    <pre><code class="language-rust">
+/% -----------------------------------------------
+/% TABLAS DE VERDAD EN PROLOG
+/% -----------------------------------------------
+/% ===============================================
+/% 1. OPERADORES BÁSICOS
+/% ===============================================
+
+/% NOT (Negación)
+/% Formas: ¬A, not(A), \+ A
+not_(1, 0).  /% not 1 = 0
+not_(0, 1).  /% not 0 = 1
+
+/% AND (Conjunción)
+/% Formas: A ∧ B, A and B, A * B
+and_(0, 0, 0).  /% 0 ∧ 0 = 0
+and_(0, 1, 0).  /% 0 ∧ 1 = 0
+and_(1, 0, 0).  /% 1 ∧ 0 = 0
+and_(1, 1, 1).  /% 1 ∧ 1 = 1
+
+/% OR (Disyunción)
+/% Formas: A ∨ B, A or B, A + B
+or_(0, 0, 0).   /% 0 ∨ 0 = 0
+or_(0, 1, 1).   /% 0 ∨ 1 = 1
+or_(1, 0, 1).   /% 1 ∨ 0 = 1
+or_(1, 1, 1).   /% 1 ∨ 1 = 1
+
+/% IMPLICACIÓN (If-Then)
+/% Forma: A → B
+implica(A, B, Resultado) :-
+    /% A → B es equivalente a: not(A) or B
+    not_(A, NotA),
+    or_(NotA, B, Resultado).
+
+/% BICONDICIONAL (Si y solo si)
+/% Forma: A ↔ B
+bicondicional(A, B, Resultado) :-
+    /% A ↔ B es equivalente a: (A ∧ B) ∨ (¬A ∧ ¬B)
+    and_(A, B, AndAB),
+    not_(A, NotA),
+    not_(B, NotB),
+    and_(NotA, NotB, AndNotANotB),
+    or_(AndAB, AndNotANotB, Resultado).
+
+/% XOR (Disyunción exclusiva)
+/% Forma: A ⊕ B
+xor_(A, B, Resultado) :-
+    /% A ⊕ B es equivalente a: (A ∨ B) ∧ ¬(A ∧ B)
+    or_(A, B, OrAB),
+    and_(A, B, AndAB),
+    not_(AndAB, NotAndAB),
+    and_(OrAB, NotAndAB, Resultado).
+
+/% NAND (NOT AND)
+nand_(A, B, Resultado) :-
+    and_(A, B, AndResult),
+    not_(AndResult, Resultado).
+
+/% NOR (NOT OR)
+nor_(A, B, Resultado) :-
+    or_(A, B, OrResult),
+    not_(OrResult, Resultado).
+</code></pre>
+                </div>
+            </article>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <!-- Página 2 -->
+        <div class="pagina-contenido" data-page="2">
+            <div class="salutation">2. En desarollo</div>
+
+
+            <article class="page">
+                <h1>En desarollo</h1>
+                <div class="code-block">
+                    <div class="code-header"><span>lenguaje.rs</span></div>
+                    <pre><code class="language-rust">
+fn main(){
+    println!("¡Hola Mundo!")
+}
+</code></pre>
+                </div>
+            </article>
+
+
+        </div>
+    </div>
+
+    <!-- Panel de controles -->
+    <div class="controls no-print">
+        <h3 style="font-size: 14px; margin-bottom: 10px;">Configura tu pdf PUCULULU</h3>
+
+        <div class="control-group">
+            <label for="fontFamily">Fuente Matemática:</label>
+            <select id="fontFamily">
+                <option value="'Latin Modern Math', 'Cambria Math', 'STIX Two Math', serif">Latin Modern Math</option>
+                <option value="'Cambria Math', serif">Cambria Math</option>
+                <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="fontSize">Tamaño de Texto:</label>
+            <select id="fontSize">
+                <option value="11px">Pequeño (11px)</option>
+                <option value="12px" selected>Estándar (12px)</option>
+                <option value="13px">Grande (13px)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="themeColor">Color Principal:</label>
+            <select id="themeColor">
+                <option value="#003366" selected>Azul Académico</option>
+                <option value="#800000">Bordeaux</option>
+                <option value="#006400">Verde Oliva</option>
+                <option value="#4B0082">Índigo</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="imageColor">Color de Imágenes:</label>
+            <select id="imageColor">
+                <option value="#f6e6ff">Lila Claro</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="lineHeight">Interlineado:</label>
+            <select id="lineHeight">
+                <option value="1.0">Sencillo (1.0)</option>
+                <option value="1.2">Normal (1.2)</option>
+                <option value="1.5" selected>1.5 Líneas</option>
+                <option value="2.0">Doble (2.0)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="textAlign">Alineación:</label>
+            <select id="textAlign">
+                <option value="justify" selected>Justificado</option>
+                <option value="left">Izquierda</option>
+                <option value="center">Centro</option>
+            </select>
+        </div>
+
+        <button id="updateBtn">Aplicar Cambios</button>
+        <button id="printBtn">Imprimir Documento</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-rust.min.js"></script>
+
+</body>
+
+</html>
